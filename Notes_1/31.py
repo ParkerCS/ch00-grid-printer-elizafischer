@@ -27,29 +27,3 @@ for suit in suits:
         pass
 
 
-
-
-def print_grid1(l):
-    for j in range(3):
-        print("+" + ((" -" * 3) + " +") * 3, end=" ")
-        print()
-
-        for i in range(int(l/3)):
-            print("|" + ("  " * (3)) + " |" + ("  " * (3)) + " |", end = " ")
-            print()
-    print("+" + ((" -" * (3)) + " +") * 3, end=" ")
-
-print_grid1(7)
-print("\n\n")
-
-
-def print_grid(side):
-    for j in range(2):
-        print("+" + ((" -" * int(side / 2)) + " +") * 2, end=" ")
-        print()
-        for i in range(int(side/2)):
-            print("|" + ("  " * int(side/2)) + " |" + ("  " * int(side/2)) + " |", end = " ")
-            print()
-    print("+" + ((" -" * int(side / 2)) + " +") * 2, end=" ")
-
-print_grid(12)
