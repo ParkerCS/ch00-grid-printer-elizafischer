@@ -33,45 +33,7 @@ minus = '-'
 
 You can also multiply strings:
 '+' * 10 ===> '++++++++++'
-'''
 
-plus = '+'
-minus = '-'
-space = ' '
-plus_minus = plus + minus
-minus_plus = minus + plus
-#print(plus_minus)
-#print(minus_plus)
-print()
-
-print("+", ((" - " * int(4 / 2)) + " + ") * 2, end=" ")
-print("\n")
-
-
-print("Test")
-print()
-def print_grid1(l):
-    l = int(l)
-    for i in range(l): #affects length (y direction)
-        print("+",((" - " * int(l / 2))+ " + ") * 2 , end= " ") # int(int(l)/2)
-        print("")
-        for o in range(int(l/2)): # affects width (x direction)
-            print("|  " + ("  " * int(int(l)/2) + " ") + " | " + ("  " * int(int(l)/2) + (" ")) + "  | ", end=" ")
-            print("")
-        print("+", ((" - " * int(l / 2)) + " + ") * 2, end=" ")
-        print("")
-
-
-print_grid1(6)
-# i
-    #print('+', ('-' * int(l / 3) , '+'), (' ' * int(l / 2)), end= ' ')
-#o
-            #print("|", (" " * int(l / 2)), "|", (" " * int(l / 2)), "|",  end=" ")
-            #print("|" , ("  " * int(l / 3) + " |"+ " " ) * 3, end="")
-            #print("|" + ("  " * int(l / 2)+ " ") + " | " + ("  " * int(l / 2) + (" ")) + " | ", end=" ")
-            #print("|" + ("  " * int(3) + " ") + " | " + ("  " * int( 2) + (" ")) + "  | ", end=" ")
-
-'''
 Part 2
 Making it more general
 
@@ -163,15 +125,20 @@ Another example: print_grid2(5,3):
 '''
 plus = '+'
 minus = '-'
+space = ' '
+plus_minus = plus + minus
+minus_plus = minus + plus
+#print(plus_minus)
+#print(minus_plus)
+print()
 
+### Part 1 #######################################################################################
 '''
-#Part 1
 for o in range(10):
     for q in range(10):
         print("+" , end=" - ")
     print("\n")
 print("\n\n")
-
 
 def box(n):
     for i in range(n):
@@ -180,10 +147,48 @@ def box(n):
         print(" | ", end= " + ")
         print()
 box(3)
-
-#box(int(input("Enter the size of the box: ")))
-print()
-#Part 2
-
-#Part 3
 '''
+def grid1():
+    for i in range(2):  # affects length (y direction)
+        print(("+"+ ((" -" * int(9 / 2))) + " +") * 2, end=" ")
+        print("")
+        for o in range(int(9 / 2)):  # affects width (x direction)
+            print(("|" + ("  " * int(9 / 2)) + " |" + ("  " * int(9 / 2))) + " |", end=" ")
+            print("")
+    print(("+"+ ((" -" * int(9 / 2))) + " +") * 2, end=" ")
+
+grid1()
+
+### Part 2 #######################################################################################
+print("+", ((" -" * int(4 / 2)) + " + ") * 2, end=" ")
+print("\n")
+            #print("|", (" " * int(l / 2)), "|", (" " * int(l / 2)), "|",  end=" ")
+            #print("|" , ("  " * int(l / 3) + " |"+ " " ) * 3, end="")
+            #print("|" + ("  " * int(l / 2)+ " ") + " | " + ("  " * int(l / 2) + (" ")) + " | ", end=" ")
+            #print("|" + ("  " * int(3) + " ") + " | " + ("  " * int( 2) + (" ")) + "  | ", end=" ")
+
+print("\n\n")
+def grid2(l):
+    for i in range(2): #affects length (y direction)
+        print("+", ((" -" * int(int(l)/ 2)) + " +") *2, end=" ")
+        print("")
+        for o in range(int(int(l)/2)): # affects width (x direction)
+            print("|" + ("  " * int(l/2)) + " |" + ("  " * int(int(l)/2)) + " |", end = " ")
+            print("")
+    print("+", ((" -" * int(int(l)/ 2)) + " +") *2, end=" ")
+
+grid2(9)
+
+### Part 3 #######################################################################################
+
+print("\n\n")
+def grid3(l, w):
+    for i in range(l): #affects length (y direction)
+        print("+", ((" -" * int(w)) + " +") *l, end=" ")
+        print("")
+        for o in range(w): # affects width (x direction)
+            print("|" + (("  " * int(w)) + " |") * l, end=" ")
+            print("")
+    print("+", ((" -" * int(w)) + " +") *l, end=" ")
+
+grid3(3,3)

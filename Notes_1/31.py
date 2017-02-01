@@ -25,5 +25,3 @@ suits = ["C", "H", "S", "D"]
 for suit in suits:
     for card in cards:
         pass
-
-
