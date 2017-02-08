@@ -1,3 +1,9 @@
+# very close on the first two parts.
+# Had some difficulty making a function out of it on third part.
+# I put a solution at the bottom here which
+# might give you some ideas on how to approach a solution
+# Let me know if you need additional help.
+
 '''
 Grid Printer Exercise
 Printing a Grid (adapted from Downey, “Think Python”, ex. 3.5)
@@ -139,4 +145,26 @@ print("\n")
             #print("|" + ("  " * int(l / 2)+ " ") + " | " + ("  " * int(l / 2) + (" ")) + " | ", end=" ")
             #print("|" + ("  " * int(3) + " ") + " | " + ("  " * int( 2) + (" ")) + "  | ", end=" ")
 
+def print_grid(width, cells):
+    '''
+    :param width:
+    :param cells:
+    :return:
+    '''
+    for i in range(cells):
+        print("+", end=" ")
+        for j in range(cells): #Prints first line
+            print("- " * width, end = "")
+            print("+", end = " ")
+        print()
 
+        for i in range(width):
+            for j in range(cells):
+                print("|", end = " ")
+                print("  " * width, end = "")
+            print("|")
+    for i in range(cells):
+        print("+", end=" ")
+        print("- " * width, end="")
+    print("+")
+print_grid(3,3)
